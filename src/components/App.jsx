@@ -5,7 +5,6 @@ export const App = () => {
     <div
       style={{
         height: '100vh',
-        width: '100vw',
         minWidth: 320,
         padding: 20,
       }}
