@@ -26,19 +26,6 @@ export const List = styled.table`
 
 export const ContactItem = styled.tr`
   width: 100%;
-
-  ${({ statName, statValue }) => {
-    if (statName !== 'positivePercentage') return;
-    const getColor = () => {
-      if (Number.parseInt(statValue) > 75) {
-        return 'var(--good)';
-      } else if (Number.parseInt(statValue) > 40) {
-        return 'var(--neutral)';
-      }
-      return 'var(--bad)';
-    };
-    return `color:var(--contrast-color); background-color: ${getColor()} !important;`;
-  }}
 `;
 
 export const Name = styled.td`
