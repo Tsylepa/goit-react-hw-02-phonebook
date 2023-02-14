@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import ContactForm from './ContactForm';
-import Filter from './Filter';
 import ContactList from './ContactList/ContactList';
 import { nanoid } from 'nanoid';
 import { Wrapper } from './Phonebook.styled';
@@ -50,7 +49,7 @@ class Phonebook extends Component {
   };
 
   render() {
-    const { contacts, filter, name, number } = this.state;
+    const { contacts, filter } = this.state;
 
     return (
       <Wrapper>
