@@ -34,12 +34,17 @@ export const Button = styled.button`
   border-radius: 6px;
   font-size: 20px;
   background: var(--button);
-  transition: background-color var(--transition-function),
+  transition: opacity var(--transition-function),
     color var(--transition-function);
   cursor: pointer;
 
-  :hover {
+  &:not(:disabled) {
     background: var(--button-add);
     color: var(--contrast-color);
+    opacity: 0.6;
+  }
+
+  &:not(:disabled):hover {
+    opacity: 1;
   }
 `;

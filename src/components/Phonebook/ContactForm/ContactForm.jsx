@@ -50,23 +50,29 @@ const ContactForm = ({ handleSubmit }) => {
       onSubmit={handleSubmit}
       validationSchema={schema}
     >
-      <AddContactForm>
-        <label>
-          Name:
-          <Input name="name" placeholder="Ex.: Peter Griffin" />
-          <FormError name="name" />
-        </label>
-        <label>
-          Number:
-          <Input
-            name="number"
-            onInput={autoFormatPhoneNumber}
-            placeholder="xxx-xx-xx"
-          />
-          <FormError name="number" />
-        </label>
-        <Button type="submit">Add to contacts</Button>
-      </AddContactForm>
+      {({ isValid, dirty }) => {
+        return (
+          <AddContactForm>
+            <label>
+              Name:
+              <Input name="name" placeholder="Ex.: Peter Griffin" />
+              <FormError name="name" />
+            </label>
+            <label>
+              Number:
+              <Input
+                name="number"
+                onInput={autoFormatPhoneNumber}
+                placeholder="xxx-xx-xx"
+              />
+              <FormError name="number" />
+            </label>
+            <Button type="submit" disabled={!(isValid && dirty)}>
+              Add to contacts
+            </Button>
+          </AddContactForm>
+        );
+      }}
     </Formik>
   );
 };
